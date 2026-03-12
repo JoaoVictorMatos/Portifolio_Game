@@ -174,7 +174,7 @@
 /* Media Queries */
 @media (max-width: 768px) {
   .modal {
-    width: 90vw;
+    width: 70%;
     max-height: 80vh;
     max-width: 95vw;
     border-radius: 8px;
@@ -200,6 +200,7 @@
 
   .content {
     padding: 1rem;
+    text-align: center;
   }
 
   .footer {
@@ -210,8 +211,8 @@
 
 @media (max-width: 480px) {
   .modal {
-    width: 95vw;
-    max-height: 90vh;
+    width: 85%;
+    max-height: 85vh;
     border-radius: 8px;
   }
 

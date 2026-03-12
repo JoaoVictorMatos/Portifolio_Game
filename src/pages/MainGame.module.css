@@ -193,6 +193,9 @@
 }
 
 @media (max-width: 480px) {
+  .gameContainer {
+    max-height: 100vh;
+  }
   .controlButton {
     padding: 0.6rem 0.8rem;
     font-size: 0.8rem;
