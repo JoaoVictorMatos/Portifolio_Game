@@ -517,7 +517,7 @@
 /* Media Queries */
 @media (max-width: 768px) {
   .landingContainer {
-    max-height: 100dvh;
+    max-height: 90dvh;
   }
   .content {
     flex-direction: column;
