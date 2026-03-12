@@ -1,0 +1,526 @@
+.landingContainer {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: linear-gradient(135deg, #0f0f1e 0%, #1a1a2e 50%, #2a2a3e 100%);
+}
+
+/* Backgrounds paralaxe */
+.backgroundLayers {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+.parallaxLayer {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0.1;
+  animation: float 20s ease-in-out infinite;
+}
+
+.layer1 {
+  background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400"><path d="M0,200 Q200,100 400,200 T800,200 L800,400 L0,400 Z" fill="white"/></svg>')
+    repeat-x;
+  background-size: 400px 200px;
+  animation-delay: 0s;
+}
+
+.layer2 {
+  background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 300"><path d="M0,150 Q300,50 600,150 T1200,150 L1200,300 L0,300 Z" fill="white"/></svg>')
+    repeat-x;
+  background-size: 600px 150px;
+  animation-delay: 0.5s;
+  opacity: 0.15;
+}
+
+.layer3 {
+  background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 250"><path d="M0,125 Q400,25 800,125 T1600,125 L1600,250 L0,250 Z" fill="white"/></svg>')
+    repeat-x;
+  background-size: 800px 125px;
+  animation-delay: 1s;
+  opacity: 0.2;
+}
+
+/* Conteúdo principal */
+.content {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  max-width: 1200px;
+  padding: 2rem;
+  animation: slideUp 0.8s ease-out;
+}
+
+/* Container do personagem */
+.characterContainer {
+  position: relative;
+  width: 250px;
+  height: 320px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.skateboard {
+  position: relative;
+  width: 160px;
+  height: 120px;
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Prancha principal (deck) */
+.deck {
+  position: absolute;
+  top: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 140px;
+  height: 35px;
+  background: linear-gradient(
+    90deg,
+    #e74c3c 0%,
+    #c0392b 30%,
+    #2c3e50 50%,
+    #c0392b 70%,
+    #e74c3c 100%
+  );
+  border-radius: 50px;
+  box-shadow:
+    var(--shadow-md),
+    inset 0 2px 8px rgba(0, 0, 0, 0.4),
+    0 4px 12px rgba(0, 0, 0, 0.3);
+  z-index: 3;
+}
+
+/* Lixa (grip) */
+.deckGrip {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background:
+    repeating-linear-gradient(
+      45deg,
+      transparent,
+      transparent 2px,
+      rgba(0, 0, 0, 0.1) 2px,
+      rgba(0, 0, 0, 0.1) 4px
+    ),
+    repeating-linear-gradient(
+      -45deg,
+      transparent,
+      transparent 2px,
+      rgba(0, 0, 0, 0.1) 2px,
+      rgba(0, 0, 0, 0.1) 4px
+    );
+  border-radius: 50px;
+  pointer-events: none;
+}
+
+/* Eixo frontal */
+.truckFront {
+  position: absolute;
+  top: 60px;
+  left: 20%;
+  transform: translateX(-50%);
+  z-index: 2;
+}
+
+/* Eixo traseiro */
+.truckBack {
+  position: absolute;
+  top: 60px;
+  right: 20%;
+  transform: translateX(50%);
+  z-index: 2;
+}
+
+/* Base do truck (eixo) */
+.truckBase {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 8px;
+  height: 20px;
+  background: linear-gradient(90deg, #34495e 0%, #2c3e50 100%);
+  border-radius: 2px;
+  box-shadow: var(--shadow-sm);
+}
+
+/* Rodas frontais */
+.wheelFront1 {
+  position: absolute;
+  top: 18px;
+  left: -18px;
+  width: 24px;
+  height: 24px;
+  background: radial-gradient(
+    circle at 35% 35%,
+    #ff6b9d 0%,
+    #c2185b 50%,
+    #880e4f 100%
+  );
+  border-radius: 50%;
+  box-shadow:
+    var(--shadow-md),
+    inset -2px -2px 4px rgba(0, 0, 0, 0.4),
+    inset 1px 1px 3px rgba(255, 255, 255, 0.2);
+  animation: spin 0.8s linear infinite;
+}
+
+.wheelFront1::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 8px;
+  height: 8px;
+  background: #333;
+  border-radius: 50%;
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.wheelFront2 {
+  position: absolute;
+  top: 18px;
+  right: -18px;
+  width: 24px;
+  height: 24px;
+  background: radial-gradient(
+    circle at 35% 35%,
+    #ff6b9d 0%,
+    #c2185b 50%,
+    #880e4f 100%
+  );
+  border-radius: 50%;
+  box-shadow:
+    var(--shadow-md),
+    inset -2px -2px 4px rgba(0, 0, 0, 0.4),
+    inset 1px 1px 3px rgba(255, 255, 255, 0.2);
+  animation: spin 0.8s linear infinite;
+}
+
+.wheelFront2::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 8px;
+  height: 8px;
+  background: #333;
+  border-radius: 50%;
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+/* Rodas traseiras */
+.wheelBack1 {
+  position: absolute;
+  top: 18px;
+  left: -18px;
+  width: 24px;
+  height: 24px;
+  background: radial-gradient(
+    circle at 35% 35%,
+    #4fc3f7 0%,
+    #0288d1 50%,
+    #01579b 100%
+  );
+  border-radius: 50%;
+  box-shadow:
+    var(--shadow-md),
+    inset -2px -2px 4px rgba(0, 0, 0, 0.4),
+    inset 1px 1px 3px rgba(255, 255, 255, 0.2);
+  animation: spin 0.8s linear infinite;
+}
+
+.wheelBack1::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 8px;
+  height: 8px;
+  background: #333;
+  border-radius: 50%;
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.wheelBack2 {
+  position: absolute;
+  top: 18px;
+  right: -18px;
+  width: 24px;
+  height: 24px;
+  background: radial-gradient(
+    circle at 35% 35%,
+    #4fc3f7 0%,
+    #0288d1 50%,
+    #01579b 100%
+  );
+  border-radius: 50%;
+  box-shadow:
+    var(--shadow-md),
+    inset -2px -2px 4px rgba(0, 0, 0, 0.4),
+    inset 1px 1px 3px rgba(255, 255, 255, 0.2);
+  animation: spin 0.8s linear infinite;
+}
+
+.wheelBack2::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 8px;
+  height: 8px;
+  background: #333;
+  border-radius: 50%;
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.aura {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 200px;
+  height: 200px;
+  background: radial-gradient(
+    circle,
+    rgba(64, 169, 255, 0.3) 0%,
+    transparent 70%
+  );
+  border-radius: 50%;
+  animation: pulse 2s ease-in-out infinite;
+  z-index: 0;
+}
+
+/* Conteúdo de texto */
+.textContent {
+  flex: 1;
+  min-width: 300px;
+  animation: slideUp 0.8s ease-out 0.2s both;
+}
+
+.title {
+  font-size: clamp(2rem, 5vw, 4rem);
+  font-weight: 900;
+  margin-bottom: 0.5rem;
+  text-align: left;
+  text-shadow: 0 4px 12px rgba(255, 71, 87, 0.5);
+}
+
+.titleWord {
+  display: block;
+  background: linear-gradient(135deg, #ff6b6b, #ffa350);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: slideUp 0.8s ease-out;
+}
+
+.titleWord:nth-child(2) {
+  animation-delay: 0.1s;
+}
+
+.subtitle {
+  font-size: 1.5rem;
+  color: var(--color-cyan);
+  margin-bottom: 1rem;
+  font-weight: 500;
+  letter-spacing: 2px;
+}
+
+.description {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  margin-bottom: 2rem;
+  line-height: 1.8;
+  max-width: 400px;
+}
+
+.startButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 32px;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  color: var(--bg-primary);
+  background: linear-gradient(
+    135deg,
+    var(--color-cyan) 0%,
+    var(--color-blue) 100%
+  );
+  border-radius: 8px;
+  box-shadow: var(--shadow-glow);
+  transition: all var(--transition-normal);
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 1rem;
+}
+
+.startButton::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.2);
+  transition: left var(--transition-normal);
+  z-index: -1;
+}
+
+.startButton:hover {
+  transform: translateY(-3px);
+  box-shadow:
+    0 0 30px rgba(64, 169, 255, 0.8),
+    0 0 50px rgba(64, 169, 255, 0.4);
+  letter-spacing: 2px;
+}
+
+.startButton:hover::before {
+  left: 100%;
+}
+
+.startButton:active {
+  transform: translateY(-1px);
+}
+
+.buttonText {
+  display: inline-block;
+}
+
+.buttonIcon {
+  display: inline-block;
+  animation: float 1s ease-in-out infinite;
+}
+
+.hint {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  animation: pulse 2s ease-in-out infinite;
+}
+
+/* Estrelas */
+.stars {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  top: 0;
+  left: 0;
+}
+
+.star {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background: white;
+  border-radius: 50%;
+  animation: pulse 1.5s ease-in-out infinite;
+  opacity: 0.6;
+}
+
+/* Partículas */
+.particles {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+}
+
+.particle {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: radial-gradient(circle, var(--color-cyan), transparent);
+  border-radius: 50%;
+  animation: float 8s ease-in-out infinite;
+  opacity: 0.4;
+}
+
+/* Animações */
+@keyframes spin {
+  0%,
+  100% {
+    transform: rotateZ(0deg);
+  }
+  50% {
+    transform: rotateZ(45deg);
+  }
+}
+
+@keyframes walk {
+  0%,
+  100% {
+    transform: scaleY(1);
+  }
+  50% {
+    transform: scaleY(0.9);
+  }
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+  .content {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .characterContainer {
+    width: 180px;
+    height: 240px;
+  }
+
+  .character {
+    width: 75px;
+    height: 105px;
+  }
+
+  .title {
+    text-align: center;
+  }
+
+  .description {
+    text-align: center;
+    max-width: 100%;
+  }
+
+  .startButton {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .hint {
+    display: none;
+  }
+
+  .textContent {
+    text-align: center;
+  }
+}

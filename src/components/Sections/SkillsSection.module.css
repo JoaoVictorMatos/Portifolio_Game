@@ -1,0 +1,144 @@
+.skillsContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.intro {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 215, 61, 0.1) 0%,
+    rgba(255, 107, 107, 0.1) 100%
+  );
+  padding: 1rem;
+  border-radius: 6px;
+  border-left: 4px solid var(--color-yellow);
+}
+
+.intro p {
+  margin: 0;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+.categoriesGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.categorySection {
+  background: rgba(0, 0, 0, 0.2);
+  border: 1px solid var(--primary-accent);
+  border-radius: 8px;
+  padding: 1rem;
+}
+
+.categoryHeader {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.categoryIcon {
+  font-size: 1.5rem;
+}
+
+.categoryTitle {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--color-blue);
+  margin: 0;
+}
+
+.skillsList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.skillItem {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.skillHeader {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.skillIcon {
+  font-size: 0.9rem;
+  min-width: 20px;
+}
+
+.skillName {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  flex: 1;
+}
+
+.skillBarContainer {
+  width: 100%;
+  height: 6px;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 3px;
+  overflow: hidden;
+  border: 1px solid var(--primary-accent);
+}
+
+.skillBar {
+  height: 100%;
+  border-radius: 3px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
+  transition: width 0.5s ease-out;
+}
+
+.skillLevel {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  text-align: right;
+  font-weight: 600;
+}
+
+.noteBox {
+  background: linear-gradient(
+    135deg,
+    rgba(46, 213, 115, 0.1) 0%,
+    rgba(78, 205, 196, 0.1) 100%
+  );
+  border: 2px solid var(--color-green);
+  border-radius: 8px;
+  padding: 1rem;
+  text-align: center;
+}
+
+.noteBox p {
+  margin: 0;
+  color: var(--text-secondary);
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+
+@media (max-width: 768px) {
+  .categoriesGrid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .categorySection {
+    padding: 0.75rem;
+  }
+
+  .skillItem {
+    gap: 0.3rem;
+  }
+
+  .skillName {
+    font-size: 0.85rem;
+  }
+}

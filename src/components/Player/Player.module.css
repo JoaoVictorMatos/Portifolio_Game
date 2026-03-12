@@ -1,0 +1,318 @@
+.playerContainer {
+  position: absolute;
+  bottom: 80px;
+  width: 60px;
+  height: 100px;
+  transition: left 0.15s linear;
+  z-index: 20;
+}
+
+.player {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.skateboard {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.skateboard.riding .wheelFront1,
+.skateboard.riding .wheelFront2,
+.skateboard.riding .wheelBack1,
+.skateboard.riding .wheelBack2 {
+  animation: spin 0.4s linear infinite !important;
+}
+
+/* Prancha principal (deck) */
+.deck {
+  position: absolute;
+  top: 35px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 70px;
+  height: 18px;
+  background: linear-gradient(
+    90deg,
+    #e74c3c 0%,
+    #c0392b 30%,
+    #2c3e50 50%,
+    #c0392b 70%,
+    #e74c3c 100%
+  );
+  border-radius: 25px;
+  box-shadow:
+    var(--shadow-md),
+    inset 0 1px 4px rgba(0, 0, 0, 0.4),
+    0 2px 6px rgba(0, 0, 0, 0.3);
+  z-index: 3;
+}
+
+/* Lixa (grip) */
+.deckGrip {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background:
+    repeating-linear-gradient(
+      45deg,
+      transparent,
+      transparent 1px,
+      rgba(0, 0, 0, 0.15) 1px,
+      rgba(0, 0, 0, 0.15) 2px
+    ),
+    repeating-linear-gradient(
+      -45deg,
+      transparent,
+      transparent 1px,
+      rgba(0, 0, 0, 0.15) 1px,
+      rgba(0, 0, 0, 0.15) 2px
+    );
+  border-radius: 25px;
+  pointer-events: none;
+}
+
+/* Eixo frontal */
+.truckFront {
+  position: absolute;
+  top: 48px;
+  left: 25%;
+  transform: translateX(-50%);
+  z-index: 2;
+}
+
+/* Eixo traseiro */
+.truckBack {
+  position: absolute;
+  top: 48px;
+  right: 25%;
+  transform: translateX(50%);
+  z-index: 2;
+}
+
+/* Base do truck (eixo) */
+.truckBase {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 4px;
+  height: 10px;
+  background: linear-gradient(90deg, #34495e 0%, #2c3e50 100%);
+  border-radius: 1px;
+  box-shadow: var(--shadow-sm);
+}
+
+/* Rodas frontais */
+.wheelFront1 {
+  position: absolute;
+  top: 10px;
+  left: -12px;
+  width: 12px;
+  height: 12px;
+  background: radial-gradient(
+    circle at 35% 35%,
+    #ff6b9d 0%,
+    #c2185b 50%,
+    #880e4f 100%
+  );
+  border-radius: 50%;
+  box-shadow:
+    var(--shadow-md),
+    inset -1px -1px 2px rgba(0, 0, 0, 0.4),
+    inset 0.5px 0.5px 1px rgba(255, 255, 255, 0.2);
+  animation: spin 1s linear infinite;
+}
+
+.wheelFront1::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 4px;
+  height: 4px;
+  background: #333;
+  border-radius: 50%;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.5);
+}
+
+.wheelFront2 {
+  position: absolute;
+  top: 10px;
+  right: -12px;
+  width: 12px;
+  height: 12px;
+  background: radial-gradient(
+    circle at 35% 35%,
+    #ff6b9d 0%,
+    #c2185b 50%,
+    #880e4f 100%
+  );
+  border-radius: 50%;
+  box-shadow:
+    var(--shadow-md),
+    inset -1px -1px 2px rgba(0, 0, 0, 0.4),
+    inset 0.5px 0.5px 1px rgba(255, 255, 255, 0.2);
+  animation: spin 1s linear infinite;
+}
+
+.wheelFront2::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 4px;
+  height: 4px;
+  background: #333;
+  border-radius: 50%;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.5);
+}
+
+/* Rodas traseiras */
+.wheelBack1 {
+  position: absolute;
+  top: 10px;
+  left: -12px;
+  width: 12px;
+  height: 12px;
+  background: radial-gradient(
+    circle at 35% 35%,
+    #4fc3f7 0%,
+    #0288d1 50%,
+    #01579b 100%
+  );
+  border-radius: 50%;
+  box-shadow:
+    var(--shadow-md),
+    inset -1px -1px 2px rgba(0, 0, 0, 0.4),
+    inset 0.5px 0.5px 1px rgba(255, 255, 255, 0.2);
+  animation: spin 1s linear infinite;
+}
+
+.wheelBack1::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 4px;
+  height: 4px;
+  background: #333;
+  border-radius: 50%;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.5);
+}
+
+.wheelBack2 {
+  position: absolute;
+  top: 10px;
+  right: -12px;
+  width: 12px;
+  height: 12px;
+  background: radial-gradient(
+    circle at 35% 35%,
+    #4fc3f7 0%,
+    #0288d1 50%,
+    #01579b 100%
+  );
+  border-radius: 50%;
+  box-shadow:
+    var(--shadow-md),
+    inset -1px -1px 2px rgba(0, 0, 0, 0.4),
+    inset 0.5px 0.5px 1px rgba(255, 255, 255, 0.2);
+  animation: spin 1s linear infinite;
+}
+
+.wheelBack2::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 4px;
+  height: 4px;
+  background: #333;
+  border-radius: 50%;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.5);
+}
+
+.shadow {
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 35px;
+  height: 6px;
+  background: radial-gradient(ellipse, rgba(0, 0, 0, 0.4) 0%, transparent 70%);
+  border-radius: 50%;
+  z-index: 0;
+}
+
+/* Animações de caminhada */
+@keyframes legswing {
+  0%,
+  100% {
+    transform: rotateZ(0deg);
+  }
+  50% {
+    transform: rotateZ(25deg);
+  }
+}
+
+@keyframes armswing {
+  0%,
+  100% {
+    transform: rotateZ(0deg);
+  }
+  50% {
+    transform: rotateZ(-25deg);
+  }
+}
+
+@media (max-width: 768px) {
+  .playerContainer {
+    bottom: 72px; /* desce um pouco o conjunto no mobile */
+  }
+
+  .skateboard {
+    width: 70%;
+    height: 70%;
+    position: relative;
+    top: 8px; /* empurra o skate mais para baixo */
+  }
+
+  .deck {
+    width: 52px;
+    height: 12px;
+    top: 42px; /* deck mais para baixo */
+  }
+
+  .truckFront,
+  .truckBack {
+    top: 50px; /* aproxima os eixos do deck */
+  }
+
+  .truckBase {
+    height: 7px; /* eixo menor para reduzir distância visual */
+  }
+
+  .wheelFront1,
+  .wheelFront2,
+  .wheelBack1,
+  .wheelBack2 {
+    top: 7px; /* rodas mais próximas do eixo/deck */
+    width: 10px;
+    height: 10px;
+  }
+
+  .shadow {
+    bottom: -6px; /* aproxima a sombra do skate */
+    width: 28px;
+    height: 5px;
+  }
+}

@@ -1,0 +1,109 @@
+.aboutContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.introductionBox {
+  background: linear-gradient(
+    135deg,
+    rgba(78, 205, 196, 0.1) 0%,
+    rgba(64, 169, 255, 0.1) 100%
+  );
+  border-left: 4px solid var(--color-cyan);
+  padding: 1rem;
+  border-radius: 6px;
+}
+
+.introduction {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--color-cyan);
+  margin: 0;
+  line-height: 1.6;
+}
+
+.mainText {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.mainText p {
+  color: var(--text-secondary);
+  line-height: 1.8;
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+.highlightsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.highlightCard {
+  background: rgba(0, 0, 0, 0.2);
+  border: 1px solid var(--primary-accent);
+  border-radius: 8px;
+  padding: 1rem;
+  transition: all var(--transition-normal);
+}
+
+.highlightCard:hover {
+  transform: translateY(-4px);
+  border-color: var(--color-blue);
+  box-shadow: 0 0 15px rgba(64, 169, 255, 0.3);
+}
+
+.highlightTitle {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--color-blue);
+  margin: 0 0 0.5rem 0;
+}
+
+.highlightDescription {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  margin: 0;
+  line-height: 1.6;
+}
+
+.ctaBox {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 107, 107, 0.15) 0%,
+    rgba(255, 163, 80, 0.15) 100%
+  );
+  border: 2px solid var(--color-red);
+  border-radius: 8px;
+  padding: 1.25rem;
+  text-align: center;
+}
+
+.ctaBox p {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-red);
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .aboutContainer {
+    gap: 1rem;
+  }
+
+  .highlightsGrid {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+
+  .mainText p {
+    font-size: 0.9rem;
+  }
+
+  .introduction {
+    font-size: 1rem;
+  }
+}
