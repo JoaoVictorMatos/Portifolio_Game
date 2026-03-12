@@ -45,7 +45,7 @@ export const useKeyboardControls = (
  * @param {array} stages - Array de stages com posição
  * @param {number} threshold - Distância para considerar "perto"
  */
-export const useStageProximity = (playerPosition, stages, threshold = 10) => {
+export const useStageProximity = (playerPosition, stages, threshold = 3) => {
   return stages.filter(
     (stage) => Math.abs(stage.position - playerPosition) <= threshold,
   );
