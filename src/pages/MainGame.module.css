@@ -127,7 +127,7 @@ body,
   font-size: 0.9rem;
   cursor: pointer;
   transition: all var(--transition-fast);
-  z-index: 110;
+  z-index: 98;
   backdrop-filter: blur(10px);
 }
 
