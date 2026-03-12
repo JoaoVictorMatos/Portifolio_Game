@@ -87,7 +87,7 @@ const MainGame = ({ onBack }) => {
 
     // Detecção de proximidade com stages
     const nearbyStages = useStageProximity(playerPosition, mapStages);
-    const canInteract = nearbyStages.length > 20;
+    const canInteract = nearbyStages.length > 0;
 
     // Estado visual do player
     const isMoving = movingLeft || movingRight;
