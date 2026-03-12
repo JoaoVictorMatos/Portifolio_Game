@@ -1,5 +1,5 @@
 import React from 'react'
-import { contactData } from '../../data/projectsData'
+import { contactData } from '../../data/contactData'
 import styles from './ContactSection.module.css'
 
 const ContactSection = () => {

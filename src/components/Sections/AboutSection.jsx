@@ -1,5 +1,5 @@
 import React from 'react'
-import { aboutData } from '../../data/projectsData'
+import { aboutData } from '../../data/aboutData'
 import styles from './AboutSection.module.css'
 
 const AboutSection = () => {
@@ -20,6 +20,7 @@ const AboutSection = () => {
             <div className={styles.highlightsGrid}>
                 {aboutData.highlights.map((highlight, idx) => (
                     <div key={idx} className={styles.highlightCard}>
+                        <div className={styles.highlightIcon}>{highlight.icon}</div>
                         <h3 className={styles.highlightTitle}>{highlight.title}</h3>
                         <p className={styles.highlightDescription}>{highlight.description}</p>
                     </div>

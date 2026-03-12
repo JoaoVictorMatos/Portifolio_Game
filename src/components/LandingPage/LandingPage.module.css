@@ -352,9 +352,38 @@
 .description {
   font-size: 1rem;
   color: var(--text-secondary);
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
   line-height: 1.8;
   max-width: 400px;
+}
+
+.quickLinks {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  justify-content: center;
+}
+
+.quickLink {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  background: rgba(100, 200, 255, 0.1);
+  border: 2px solid rgba(100, 200, 255, 0.3);
+  border-radius: 50%;
+  font-size: 1.5rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.quickLink:hover {
+  background: rgba(100, 200, 255, 0.25);
+  border-color: rgba(100, 200, 255, 0.8);
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(100, 200, 255, 0.2);
 }
 
 .startButton {

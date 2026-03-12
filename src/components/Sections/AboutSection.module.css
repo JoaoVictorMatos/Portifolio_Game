@@ -38,34 +38,49 @@
 
 .highlightsGrid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
 }
 
 .highlightCard {
-  background: rgba(0, 0, 0, 0.2);
-  border: 1px solid var(--primary-accent);
-  border-radius: 8px;
-  padding: 1rem;
-  transition: all var(--transition-normal);
+  background: linear-gradient(
+    135deg,
+    rgba(26, 26, 46, 0.5) 0%,
+    rgba(42, 42, 62, 0.5) 100%
+  );
+  border: 1px solid rgba(100, 200, 255, 0.2);
+  border-radius: 12px;
+  padding: 1.5rem;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
 }
 
 .highlightCard:hover {
-  transform: translateY(-4px);
-  border-color: var(--color-blue);
-  box-shadow: 0 0 15px rgba(64, 169, 255, 0.3);
+  transform: translateY(-8px);
+  border-color: rgba(100, 200, 255, 0.5);
+  box-shadow: 0 8px 32px rgba(100, 200, 255, 0.15);
+}
+
+.highlightIcon {
+  font-size: 2.5rem;
+  margin-bottom: 0.75rem;
+  display: block;
 }
 
 .highlightTitle {
   font-size: 1rem;
   font-weight: 700;
-  color: var(--color-blue);
+  color: rgba(100, 200, 255, 0.95);
   margin: 0 0 0.5rem 0;
 }
 
 .highlightDescription {
   font-size: 0.9rem;
-  color: var(--text-muted);
+  color: rgba(255, 255, 255, 0.7);
   margin: 0;
   line-height: 1.6;
 }

@@ -45,12 +45,41 @@ const LandingPage = ({ onStart }) => {
                         <span className={styles.titleWord}>Victor</span>
                     </h1>
 
-                    <p className={styles.subtitle}>Desenvolvedor Web</p>
+                    <p className={styles.subtitle}>Frontend Developer | React & JavaScript</p>
 
                     <p className={styles.description}>
-                        Bem-vindo à minha jornada! Aqui você encontrará meus projetos, habilidades e histórias
-                        de desenvolvimento. Prepare-se para uma aventura interativa!
+                        Desenvolvedor web apaixonado por criar interfaces modernas e soluções bem estruturadas.
+                        Explore meu portfólio interativo e descubra meus projetos, habilidades e como você pode trabalhar comigo.
                     </p>
+
+                    {/* Quick Links */}
+                    <div className={styles.quickLinks}>
+                        <a
+                            href="https://github.com/JoaoVictorMatos"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className={styles.quickLink}
+                            title="Meu GitHub"
+                        >
+                            🐙
+                        </a>
+                        <a
+                            href="https://www.linkedin.com/in/joaomatos02"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className={styles.quickLink}
+                            title="Meu LinkedIn"
+                        >
+                            💼
+                        </a>
+                        <a
+                            href="mailto:joao.digivendas@gmail.com"
+                            className={styles.quickLink}
+                            title="Enviar email"
+                        >
+                            ✉️
+                        </a>
+                    </div>
 
                     {/* Botão de iniciar */}
                     <button className={styles.startButton} onClick={onStart}>
@@ -60,7 +89,7 @@ const LandingPage = ({ onStart }) => {
 
                     {/* Indicador de interatividade */}
                     <div className={styles.hint}>
-                        Clique para começar...
+                        Clique para começar uma aventura interativa...
                     </div>
                 </div>
             </div>
